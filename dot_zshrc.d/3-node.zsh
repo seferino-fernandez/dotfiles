@@ -6,7 +6,7 @@ eval "$(fnm env --version-file-strategy=recursive --use-on-cd --corepack-enabled
 alias npx='pnpx'
 
 # bun completions
-[ -s "/Users/seferinofernandez/.bun/_bun" ] && source "/Users/seferinofernandez/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

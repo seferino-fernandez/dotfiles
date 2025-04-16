@@ -1,0 +1,24 @@
+# Fonts and Theme
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 16
+font-style = medium
+bold-is-bright = true
+theme = catppuccin-mocha
+
+
+# Clipboard
+clipboard-paste-protection = false
+
+# behavior
+auto-update = check
+auto-update-channel = stable
+quit-after-last-window-closed = true
+shell-integration-features = true
+
+# macOS specific features
+macos-titlebar-style = transparent
+macos-option-as-alt = true 
+window-save-state = always
+window-vsync = true
+window-colorspace = display-p3
+quick-terminal-screen = macos-menu-bar

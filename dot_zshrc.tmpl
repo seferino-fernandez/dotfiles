@@ -1,25 +1,25 @@
-
+{{ if eq .chezmoi.os "darwin" -}}
 # Homebew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_ANALYTICS=1
-
+{{ end -}}
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 # Setup ZSH Aliases
-system=`uname -s`
+system=$(uname -s)
 zshdir=$HOME/.zshrc.d
-if [ -d $zshdir ]; then
+if [ -d "$zshdir" ]; then
     pattern=".*/[0-9]+.*\.z?sh$"
-    if [ $system = "Darwin" ]; then
-       files=$(command find -E $zshdir -regex "$pattern"|sort)
+    if [ "$system" = "Darwin" ]; then
+       files=$(command find -E "$zshdir" -regex "$pattern"|sort)
     else
-        files=$(command find $zshdir -regex $pattern|sort)
+        files=$(command find "$zshdir" -regex "$pattern"|sort)
     fi
     for i in ${(f)files}; do # param extension flag 'f' strips newlines
-        if [ -r $i ]; then
-            . $i
+        if [ -r "$i" ]; then
+            . "$i"
         fi
     done
     unset i
