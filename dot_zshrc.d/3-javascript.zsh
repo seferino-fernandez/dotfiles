@@ -1,0 +1,3 @@
+
+# pnpm
+alias npx='pnpx'
