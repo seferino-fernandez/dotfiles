@@ -1,3 +1,7 @@
+# Editor
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
 # zoxide
 alias cd='z'
 

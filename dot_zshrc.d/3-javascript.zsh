@@ -1,3 +1,0 @@
-
-# pnpm
-alias npx='pnpx'

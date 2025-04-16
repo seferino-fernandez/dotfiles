@@ -1,0 +1,3 @@
+# Flutter Config
+export PATH=$HOME/open-source/flutter/bin:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
