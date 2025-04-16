@@ -1,0 +1,6 @@
+github.com:
+    git_protocol: ssh
+    users:
+        seferino-fernandez:
+        seferino-dcl:
+    user: seferino-dcl
