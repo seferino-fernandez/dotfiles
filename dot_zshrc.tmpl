@@ -1,7 +1,18 @@
 {{ if eq .chezmoi.os "darwin" -}}
-# Homebew
+# Homebrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_ANALYTICS=1
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" }}
+# Homebrew - Linuxbrew
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_ANALYTICS=1
+
+echo >> /home/seferinofernandez/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinofernandez/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 {{ end -}}
 
 # Set up fzf key bindings and fuzzy completion
