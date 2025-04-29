@@ -10,3 +10,4 @@ README.*
 **/plugged/
 **/plugged/**/*
 **/yankring_history*.txt
+.config/nvim/lazy-lock.json
