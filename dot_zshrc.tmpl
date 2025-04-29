@@ -4,13 +4,12 @@
 autoload -U compinit
 compinit
 
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .osid "darwin" }}
 # Homebrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_ANALYTICS=1
-{{ end -}}
 
-{{ if eq .chezmoi.os "linux" }}
+{{ else if eq .osid "linux-debian" }}
 # Homebrew - Linuxbrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_ANALYTICS=1
@@ -19,7 +18,9 @@ echo >> /home/seferinofernandez/.zshrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinofernandez/.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-{{ end -}}
+{{ else if eq .osid "linux-fedora" }}
+# Fedora-specific code
+{{ end }}
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -44,7 +45,6 @@ fi
 unset zshdir files pattern
 
 eval "$(zoxide init zsh)"
-eval "$(~/.local/bin/mise activate)"
 
 # Zsh Plugin Manager - Sheldon
 eval "$(sheldon source)"

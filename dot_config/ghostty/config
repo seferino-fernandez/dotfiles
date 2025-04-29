@@ -13,6 +13,7 @@ clipboard-paste-protection = false
 auto-update = check
 auto-update-channel = stable
 quit-after-last-window-closed = true
+shell-integration = zsh
 shell-integration-features = true
 
 # macOS specific features
