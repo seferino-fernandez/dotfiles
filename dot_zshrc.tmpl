@@ -1,53 +1,7 @@
-# --- Zsh Completion System Initialization ---
-# Load the compinit function and initialize the completion system.
-# This needs to happen before any scripts/plugins that use 'compdef'.
-autoload -U compinit
-compinit
-
 {{ if eq .osid "darwin" }}
-# Homebrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_NO_ANALYTICS=1
-
+{{-   include "dot_zshrc-darwin" -}}
 {{ else if eq .osid "linux-debian" }}
-# Homebrew - Linuxbrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_NO_ANALYTICS=1
-
-echo >> /home/seferinofernandez/.zshrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinofernandez/.zshrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
+{{-   include "dot_zshrc-linux-debian" -}}
 {{ else if eq .osid "linux-fedora" }}
-# Fedora-specific code
+{{-   include "dot_zshrc-linux-fedora" -}}
 {{ end }}
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-# Setup ZSH Aliases
-system=$(uname -s)
-zshdir=$HOME/.zshrc.d
-if [ -d "$zshdir" ]; then
-    pattern=".*/[0-9]+.*\.z?sh$"
-    if [ "$system" = "Darwin" ]; then
-       files=$(command find -E "$zshdir" -regex "$pattern"|sort)
-    else
-        files=$(command find "$zshdir" -regex "$pattern"|sort)
-    fi
-    for i in ${(f)files}; do # param extension flag 'f' strips newlines
-        if [ -r "$i" ]; then
-            . "$i"
-        fi
-    done
-    unset i
-fi
-unset zshdir files pattern
-
-eval "$(zoxide init zsh)"
-
-# Zsh Plugin Manager - Sheldon
-eval "$(sheldon source)"
-
-# Starship
-eval "$(starship init zsh)"

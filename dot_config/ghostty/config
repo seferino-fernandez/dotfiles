@@ -16,6 +16,9 @@ quit-after-last-window-closed = true
 shell-integration = zsh
 shell-integration-features = true
 
+# Linux specific features
+gtk-single-instance = true
+
 # macOS specific features
 macos-titlebar-style = transparent
 macos-option-as-alt = true 

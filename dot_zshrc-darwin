@@ -1,0 +1,34 @@
+# --- Zsh Completion System Initialization ---
+# Load the compinit function and initialize the completion system.
+# This needs to happen before any scripts/plugins that use 'compdef'.
+autoload -U compinit
+compinit
+
+# Homebrew
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_ANALYTICS=1
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Setup ZSH Aliases
+zshdir=$HOME/.zshrc.d
+if [ -d "$zshdir" ]; then
+    pattern=".*/[0-9]+.*\.z?sh$"
+    files=$(command find -E "$zshdir" -regex "$pattern"|sort)
+    for i in ${(f)files}; do # param extension flag 'f' strips newlines
+        if [ -r "$i" ]; then
+            . "$i"
+        fi
+    done
+    unset i
+fi
+unset zshdir files pattern
+
+eval "$(zoxide init zsh)"
+
+# Zsh Plugin Manager - Sheldon
+eval "$(sheldon source)"
+
+# Starship
+eval "$(starship init zsh)"
