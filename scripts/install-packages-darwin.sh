@@ -23,4 +23,5 @@ brew install zsh \
     sheldon \
     starship \
     fnm \
-    chezmoi
+    chezmoi \
+    uv
