@@ -24,16 +24,6 @@ brew install zsh \
     fzf \
     sheldon \
     starship \
-    fnm \
-    chezmoi \
-    uv
+    chezmoi
 
 sudo chsh -s "$(which zsh)"
-
-if [[ $(command -v cargo) == "" ]]; then
-    echo "Installing Rust"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-else
-    echo "Updating Rust"
-    rustup update
-fi
