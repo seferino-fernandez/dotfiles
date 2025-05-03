@@ -27,4 +27,4 @@ brew install zsh \
     fnm \
     chezmoi
 
-chsh -s "$(which zsh)"
+sudo chsh -s "$(which zsh)"
