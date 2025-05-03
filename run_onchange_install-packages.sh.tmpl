@@ -1,0 +1,7 @@
+{{ if eq .osid "darwin" }}
+{{-   include "scripts/install-packages-darwin.sh" -}}
+{{ else if eq .osid "linux-debian" }}
+{{-   include "scripts/install-packages-linux-debian.sh" -}}
+{{ else if eq .osid "linux-fedora" }}
+{{-   include "scripts/install-packages-linux-fedora.sh" -}}
+{{ end }}
