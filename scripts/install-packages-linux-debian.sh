@@ -24,6 +24,7 @@ brew install zsh \
     fzf \
     sheldon \
     starship \
-    fnm
+    fnm \
+    chezmoi
 
 chsh -s "$(which zsh)"
