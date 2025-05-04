@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+sudo apt-get update -y && sudo apt-get upgrade -y
+
 sudo apt-get install build-essential procps curl file git
 
 if [[ $(command -v brew) == "" ]]; then
-    echo "Installing Hombrew"
+    echo "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     echo "Updating Homebrew"
@@ -25,5 +27,3 @@ brew install zsh \
     sheldon \
     starship \
     chezmoi
-
-sudo chsh -s "$(which zsh)"
