@@ -4,6 +4,10 @@
 autoload -U compinit
 compinit
 
+# Homebrew
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
