@@ -12,7 +12,6 @@ export HOMEBREW_NO_ANALYTICS=1
 source <(fzf --zsh)
 
 # Setup ZSH Aliases
-system=$(uname -s)
 zshdir=$HOME/.zshrc.d
 if [ -d "$zshdir" ]; then
     pattern=".*/[0-9]+.*\.z?sh$"
