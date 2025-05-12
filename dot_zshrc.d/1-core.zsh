@@ -17,3 +17,5 @@ alias find='fd'
 
 # Eza
 alias ls='eza --all --long --group --group-directories-first --icons --header --time-style long-iso'
+
+alias grep='rg'
