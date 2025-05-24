@@ -6,4 +6,6 @@
 {{-   include "scripts/install-packages-linux-fedora.sh" -}}
 {{ else if eq .osid "linux-aurora" }}
 {{-   include "scripts/install-packages-linux-fedora.sh" -}}
+{{ else if eq .osid "linux-ubuntu" }}
+{{-   include "scripts/install-packages-linux-ubuntu.sh" -}}
 {{ end }}

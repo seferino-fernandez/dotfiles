@@ -6,4 +6,6 @@
 {{-   include "dot_zshrc-linux-fedora" -}}
 {{ else if eq .osid "linux-aurora" }}
 {{-   include "dot_zshrc-linux-fedora" -}}
+{{ else if eq .osid "linux-ubuntu" }}
+{{-   include "dot_zshrc-linux-ubuntu" -}}
 {{ end }}
