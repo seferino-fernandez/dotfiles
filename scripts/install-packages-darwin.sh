@@ -24,7 +24,9 @@ brew install zsh \
     starship \
     fnm \
     chezmoi \
-    uv
+    uv \
+    font-fira-code-nerd-font \
+    font-jetbrains-mono-nerd-font
 
 if [[ $(command -v cargo) == "" ]]; then
     echo "Installing Rust"

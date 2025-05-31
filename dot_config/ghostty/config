@@ -1,10 +1,9 @@
-# Fonts and Theme
-font-family = "JetBrainsMono Nerd Font Mono"
-font-size = 16
+# Fonts and Appearance
+font-family = "FiraCode Nerd Font Mono"
+font-size = 20
 font-style = medium
 bold-is-bright = true
 theme = catppuccin-mocha
-
 
 # Clipboard
 clipboard-paste-protection = false
@@ -24,5 +23,6 @@ macos-titlebar-style = transparent
 macos-option-as-alt = true 
 window-save-state = always
 window-vsync = true
+window-padding-balance = true 
 window-colorspace = display-p3
 quick-terminal-screen = macos-menu-bar
