@@ -13,9 +13,6 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinof
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 # Setup ZSH Aliases
 zshdir=$HOME/.zshrc.d
 if [ -d "$zshdir" ]; then

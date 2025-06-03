@@ -1,1 +1,17 @@
-{"binaries":["cargo-insta"],"install_prefix":"/Users/seferinofernandez/.cargo/bin","provider":{"source":"cargo-dist","version":"0.12.0"},"source":{"app_name":"cargo-insta","name":"insta","owner":"mitsuhiko","release_type":"github"},"version":"1.38.0"}
+{
+    "binaries": [
+        "cargo-insta"
+    ],
+    "install_prefix": "/Users/seferinofernandez/.cargo/bin",
+    "provider": {
+        "source": "cargo-dist",
+        "version": "0.12.0"
+    },
+    "source": {
+        "app_name": "cargo-insta",
+        "name": "insta",
+        "owner": "mitsuhiko",
+        "release_type": "github"
+    },
+    "version": "1.38.0"
+}

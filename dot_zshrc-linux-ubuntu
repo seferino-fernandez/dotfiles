@@ -23,9 +23,6 @@ if [ -d "$zshdir" ]; then
 fi
 unset zshdir files pattern
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 eval "$(zoxide init zsh)"
 
 # Zsh Plugin Manager - Sheldon
