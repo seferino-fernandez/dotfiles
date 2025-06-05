@@ -16,6 +16,7 @@ brew install zsh \
   eza \
   bat \
   ripgrep \
+  ast-grep \
   fd \
   zoxide \
   fzf \
