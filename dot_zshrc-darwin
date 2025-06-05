@@ -4,10 +4,6 @@
 autoload -U compinit
 compinit
 
-# Homebrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_NO_ANALYTICS=1
-
 # Setup ZSH Aliases
 zshdir=$HOME/.zshrc.d
 if [ -d "$zshdir" ]; then
