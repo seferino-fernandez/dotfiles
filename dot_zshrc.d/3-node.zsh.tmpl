@@ -26,4 +26,18 @@ eval "$(fnm env --version-file-strategy=recursive --use-on-cd --corepack-enabled
 
 # pnpm
 alias npx='pnpx'
+
+{{ else if eq .osid "linux-debian" }}
+# Node + NPM + PNPM
+# Use fnm
+eval "$(fnm env --version-file-strategy=recursive --use-on-cd --corepack-enabled --shell zsh)"
+
+# pnpm
+alias npx='pnpx'
+export PNPM_HOME="/Users/seferinofernandez/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 {{ end }}
