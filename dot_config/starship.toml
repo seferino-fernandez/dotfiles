@@ -2,6 +2,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$os\
+$username$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -33,10 +35,10 @@ vimcmd_symbol = "[󰄛 ❮](subtext1)"        # For use with zsh-vi-mode
 
 [directory]
 style = "bold lavender"
-format = '[$path ]($style)'
+format = '\[[$path]($style)\]'
 truncation_length = 3
 truncation_symbol = '…/'
-truncate_to_repo = false
+truncate_to_repo = true
 read_only = " 󰌾"
 
 [directory.substitutions]
@@ -44,6 +46,10 @@ read_only = " 󰌾"
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
+
+[fill]
+symbol = " "
+
 
 [git_branch]
 style = "bold mauve"
@@ -54,6 +60,16 @@ format = '\[[$symbol$branch]($style)\]'
 [git_status]
 style = 'fg:red'
 format = '([\[$all_status$ahead_behind\]]($style))'
+
+[hostname]
+ssh_only = true
+format = '\[[$hostname](bold flamingo)\]'
+disabled = false
+
+[localip]
+ssh_only = true
+format = '[$localipv4](bold teal) '
+disabled = false
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -188,9 +204,6 @@ format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 format = '\[[$symbol$branch]($style)\]'
 
-[hostname]
-ssh_symbol = " "
-
 [java]
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
@@ -237,8 +250,11 @@ format = '\[[$symbol($version)]($style)\]'
 [openstack]
 format = '\[[$symbol$cloud(\($project\))]($style)\]'
 
+[os]
+format = '[$symbol](bold white)'
+disabled = false
+
 [os.symbols]
-format = '\[[$symbol]($style)\]'
 Alpaquita = " "
 Alpine = " "
 AlmaLinux = " "
