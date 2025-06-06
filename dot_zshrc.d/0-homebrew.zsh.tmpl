@@ -1,4 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
+
 # Homebrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_ANALYTICS=1
@@ -10,4 +11,18 @@ export LDFLAGS="-L$HOMEBREW_LOCATION/opt/curl/lib"
 export CPPFLAGS="-I$HOMEBREW_LOCATION/opt/curl/include"
 
 unset HOMEBREW_LOCATION
+{{ else if eq .osid "linux-debian" }}
+
+# Homebrew
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_ANALYTICS=1
+
+export HOMEBREW_LOCATION="$(brew --prefix)"
+export PATH="$HOMEBREW_LOCATION/opt/curl/bin:$PATH"
+export PKG_CONFIG_PATH="$HOMEBREW_LOCATION/opt/curl/lib/pkgconfig"
+export LDFLAGS="-L$HOMEBREW_LOCATION/opt/curl/lib"
+export CPPFLAGS="-I$HOMEBREW_LOCATION/opt/curl/include"
+
+unset HOMEBREW_LOCATION
+
 {{ end -}}

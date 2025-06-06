@@ -7,23 +7,31 @@ sudo apt-get install build-essential procps curl file git
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo >>/home/seferinofernandez/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/seferinofernandez/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
     echo "Updating Homebrew"
     brew update
 fi
 
-brew install --cask font-jetbrains-mono-nerd-font
-
 brew install zsh \
     curl \
     git \
     neovim \
+    luajit \
     eza \
     bat \
     ripgrep \
+    ast-grep \
     fd \
     zoxide \
     fzf \
     sheldon \
     starship \
-    chezmoi
+    fnm \
+    chezmoi \
+    uv \
+    tectonic \
+    font-fira-code-nerd-font \
+    font-jetbrains-mono-nerd-font

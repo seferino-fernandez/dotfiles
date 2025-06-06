@@ -4,10 +4,6 @@
 autoload -U compinit
 compinit
 
-# Homebrew - Linuxbrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_NO_ANALYTICS=1
-
 echo >> /home/seferinofernandez/.zshrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinofernandez/.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -16,8 +12,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Setup ZSH Aliases
 zshdir=$HOME/.zshrc.d
 if [ -d "$zshdir" ]; then
-    pattern=".*/[0-9]+.*\.z?sh$"
-    files=$(command find "$zshdir" -regex "$pattern"|sort)
+    files=$(command fd . "$zshdir" -e zsh |sort)
     for i in ${(f)files}; do # param extension flag 'f' strips newlines
         if [ -r "$i" ]; then
             . "$i"
@@ -25,7 +20,7 @@ if [ -d "$zshdir" ]; then
     done
     unset i
 fi
-unset zshdir files pattern
+unset zshdir files
 
 eval "$(zoxide init zsh)"
 
