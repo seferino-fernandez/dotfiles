@@ -38,7 +38,7 @@ sudo apt install -y curl build-essential
 # --- Nix Setup ---
 msg "Setting up Nix environment..."
 
-if command -v nix &> /dev/null; then
+if command -v nix &>/dev/null; then
     msg_success "Nix is already installed and accessible in PATH."
 else
     msg "Nix command not found. Attempting to install Nix..."
@@ -59,7 +59,7 @@ fi
 
 # Source Nix profile to make `nix` command and paths available for the rest of the script.
 NIX_DAEMON_PROFILE_SCRIPT='/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' # For multi-user (daemon) installs
-NIX_SINGLE_USER_PROFILE_SCRIPT="$HOME/.nix-profile/etc/profile.d/nix.sh" # For single-user installs
+NIX_SINGLE_USER_PROFILE_SCRIPT="$HOME/.nix-profile/etc/profile.d/nix.sh"              # For single-user installs
 
 FOUND_NIX_PROFILE_TO_SOURCE=false
 if [ -f "$NIX_DAEMON_PROFILE_SCRIPT" ]; then
@@ -74,11 +74,11 @@ elif [ -f "$NIX_SINGLE_USER_PROFILE_SCRIPT" ]; then # Fallback for potential sin
     FOUND_NIX_PROFILE_TO_SOURCE=true
 fi
 
-if ! command -v nix &> /dev/null; then
+if ! command -v nix &>/dev/null; then
     msg_error "Nix command is not available even after attempting to source profile scripts."
     msg "This might indicate an issue with the Nix installation or PATH configuration not taking effect in this session."
     msg "Please try opening a new shell session after the script finishes."
-    exit 1 
+    exit 1
 elif ! $FOUND_NIX_PROFILE_TO_SOURCE && [ -f "$NIX_DAEMON_PROFILE_SCRIPT" ]; then
     # This case handles if Nix was already installed but somehow not sourced initially.
     # shellcheck source=/dev/null
@@ -95,12 +95,12 @@ echo
 install_or_update_nix_package() {
     local package_name_for_log="$1"
     local nix_flake_ref="$2"
-    
+
     msg "Processing Nix package: $package_name_for_log (using $nix_flake_ref)..."
-    
-    if ! command -v nix &> /dev/null; then
+
+    if ! command -v nix &>/dev/null; then
         msg_error "Nix command became unavailable. Cannot install/update $package_name_for_log."
-        exit 1 
+        exit 1
     fi
 
     # --extra-experimental-features flakes: Enables the Flakes feature for this command.
@@ -147,7 +147,7 @@ done
 # --- Rust (via rustup) ---
 echo
 msg "Checking Rust installation (via rustup)..."
-if command -v cargo &> /dev/null; then
+if command -v cargo &>/dev/null; then
     msg "Rust (cargo) is already installed. Attempting to update Rust..."
     if rustup update; then
         msg_success "Rust updated successfully."

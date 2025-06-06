@@ -32,6 +32,4 @@ brew install zsh \
     fnm \
     chezmoi \
     uv \
-    tectonic \
-    font-fira-code-nerd-font \
-    font-jetbrains-mono-nerd-font
+    tectonic
