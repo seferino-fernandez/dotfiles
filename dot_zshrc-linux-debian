@@ -4,8 +4,8 @@
 autoload -U compinit
 compinit
 
-echo >> /home/seferinofernandez/.zshrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/seferinofernandez/.zshrc
+echo >> "/home/$USER/.zshrc"
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "/home/$USER/.zshrc"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 

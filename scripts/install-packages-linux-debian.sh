@@ -7,8 +7,8 @@ sudo apt-get install build-essential procps curl file git
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo >>/home/seferinofernandez/.bashrc
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/seferinofernandez/.bashrc
+    echo >>"/home/$USER/.bashrc"
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>"/home/$USER/.bashrc"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
     echo "Updating Homebrew"
