@@ -26,6 +26,7 @@ brew install zsh \
   chezmoi \
   uv \
   tectonic \
+  jj \
   font-fira-code-nerd-font \
   font-jetbrains-mono-nerd-font
 

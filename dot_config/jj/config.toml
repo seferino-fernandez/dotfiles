@@ -1,0 +1,13 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Seferino Fernandez"
+email = "seferinofz@gmail.com"
+
+[ui]
+color = "always"
+editor = "nvim"
+pager = "delta"
+
+[ui.diff]
+format = "git"
