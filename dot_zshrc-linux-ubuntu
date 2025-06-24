@@ -23,7 +23,10 @@ if [ -d "$zshdir" ]; then
 fi
 unset zshdir files pattern
 
-eval "$(zoxide init zsh)"
+# zoxide
+if command -v zoxide>/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
 
 # Zsh Plugin Manager - Sheldon
 eval "$(sheldon source)"

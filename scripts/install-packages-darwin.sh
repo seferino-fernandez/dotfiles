@@ -27,11 +27,17 @@ brew install zsh \
   uv \
   tectonic \
   jj \
+  1password-cli \
   font-fira-code-nerd-font \
   font-jetbrains-mono-nerd-font
 
 brew install jesseduffield/lazygit/lazygit
 brew install lazygit
+
+# atuin
+if [[ $(command -v atuin) == "" ]]; then
+  brew install atuin
+fi
 
 if [[ $(command -v cargo) == "" ]]; then
   echo "Installing Rust"
