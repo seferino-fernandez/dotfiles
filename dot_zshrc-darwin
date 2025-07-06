@@ -81,6 +81,3 @@ if command -v atuin>/dev/null 2>&1; then
     eval "$(atuin init zsh)"
 fi
 
-if command -v zellij>/dev/null 2>&1; then
-    eval "$(zellij setup --generate-auto-start zsh)"
-fi
