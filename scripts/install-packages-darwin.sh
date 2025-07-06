@@ -28,6 +28,7 @@ brew install zsh \
   tectonic \
   jj \
   1password-cli \
+  zellij \
   font-fira-code-nerd-font \
   font-jetbrains-mono-nerd-font
 

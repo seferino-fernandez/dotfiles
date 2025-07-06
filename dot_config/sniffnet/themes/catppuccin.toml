@@ -1,0 +1,7 @@
+# all colors are in RGB/RGBA hexadecimal.
+primary = "#1e1e2e"      # background color
+secondary = "#04a5e5"    # header, footer, and incoming connections color
+outgoing = "#f38ba8"     # outgoing connections color
+text_body = "#cdd6f4"    # body text color
+text_headers = "#bac2de" # header and footer text color
+starred = "#f2cdcd"      # favorites' star color
