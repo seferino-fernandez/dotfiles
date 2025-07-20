@@ -11,8 +11,9 @@ fi
 brew install zsh \
   curl \
   git \
-  neovim \
+  luarocks \
   luajit \
+  neovim \
   eza \
   bat \
   ripgrep \
@@ -29,11 +30,9 @@ brew install zsh \
   jj \
   1password-cli \
   zellij \
+  lazygit \
   font-fira-code-nerd-font \
   font-jetbrains-mono-nerd-font
-
-brew install jesseduffield/lazygit/lazygit
-brew install lazygit
 
 # atuin
 if [[ $(command -v atuin) == "" ]]; then

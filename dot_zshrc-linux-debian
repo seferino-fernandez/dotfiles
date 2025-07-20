@@ -9,18 +9,50 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "/home/$USER/.z
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
-# Setup ZSH Aliases
-zshdir=$HOME/.zshrc.d
-if [ -d "$zshdir" ]; then
-    files=$(command fd . "$zshdir" -e zsh |sort)
-    for i in ${(f)files}; do # param extension flag 'f' strips newlines
-        if [ -r "$i" ]; then
-            . "$i"
-        fi
-    done
-    unset i
+# Load custom Zsh configuration files from ~/.zshrc.d
+#
+# This snippet recursively sources all readable '*.zsh' files found within
+# the ~/.zshrc.d directory. It enhances startup by conditionally using the
+# 'fd' command for faster file searching if available, and gracefully
+# falling back to the standard 'find' command if it is not.
+#
+# Files are sourced in alphabetical order based on their full path, providing
+# a deterministic load order without requiring manual file renaming.
+
+local zsh_config_dir="$HOME/.zshrc.d"
+
+if [[ -d "$zsh_config_dir" ]]; then
+  # Use a local variable to store the newline-separated list of files.
+  # This list will be populated by either 'fd' or 'find'.
+  local files_to_source
+
+  if command -v fd &>/dev/null; then
+    # The 'fd' command is preferred for its performance and modern syntax.
+    #  --type f:      ensures we only find files, not directories.
+    #  --extension zsh: filters for files with the '.zsh' extension.
+    #  . "$zsh_config_dir": recursively searches within the target directory.
+    files_to_source=$(fd --type f --extension zsh . "$zsh_config_dir" | sort)
+  else
+    # If 'fd' is not found, we use the ubiquitous 'find' command as a fallback.
+    files_to_source=$(find "$zsh_config_dir" -type f -name "*.zsh" | sort)
+  fi
+
+  # The parameter expansion flag '(f)' splits the 'files_to_source' string
+  # on newlines, creating a list for the for-loop. This is a robust Zsh
+  # feature for iterating over lines of command output.
+  local file
+  for file in ${(f)files_to_source}; do
+    # Only sources the file if it is readable.
+    if [[ -r "$file" ]]; then
+      . "$file"
+    fi
+  done
+
+  # Clean up variables to maintain a tidy shell environment.
+  unset file files_to_source
 fi
-unset zshdir files
+
+unset zsh_config_dir
 
 # zoxide
 if command -v zoxide>/dev/null 2>&1; then
@@ -28,7 +60,16 @@ if command -v zoxide>/dev/null 2>&1; then
 fi
 
 # Zsh Plugin Manager - Sheldon
-eval "$(sheldon source)"
+if command -v sheldon>/dev/null 2>&1; then
+    eval "$(sheldon source)"
+fi
 
-# Starship
-eval "$(starship init zsh)"
+# starship
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
+
+# atuin
+if command -v atuin>/dev/null 2>&1; then
+    eval "$(atuin init zsh)"
+fi

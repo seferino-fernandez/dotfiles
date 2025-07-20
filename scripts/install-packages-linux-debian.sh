@@ -2,7 +2,7 @@
 
 sudo apt-get update -y && sudo apt-get upgrade -y
 
-sudo apt-get install build-essential procps curl file git
+sudo apt-get -y install build-essential procps curl file git
 
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Homebrew"
@@ -18,8 +18,9 @@ fi
 brew install zsh \
     curl \
     git \
-    neovim \
+    luarocks \
     luajit \
+    neovim \
     eza \
     bat \
     ripgrep \
@@ -32,4 +33,18 @@ brew install zsh \
     fnm \
     chezmoi \
     uv \
-    tectonic
+    tectonic \
+    lazygit
+
+# atuin
+if [[ $(command -v atuin) == "" ]]; then
+  brew install atuin
+fi
+
+if [[ $(command -v cargo) == "" ]]; then
+  echo "Installing Rust"
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+  echo "Updating Rust"
+  rustup update
+fi
