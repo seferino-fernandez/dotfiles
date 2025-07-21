@@ -1,8 +1,11 @@
 # --- Zsh Completion System Initialization ---
 # Load the compinit function and initialize the completion system.
 # This needs to happen before any scripts/plugins that use 'compdef'.
-autoload -U compinit
-compinit
+autoload -Uz compinit
+for dump in $HOME/.zcompdump(N.mh+24); do
+    compinit
+done
+compinit -C
 
 echo >> "/home/$USER/.zshrc"
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "/home/$USER/.zshrc"
