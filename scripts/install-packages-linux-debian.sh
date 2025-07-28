@@ -38,13 +38,13 @@ brew install zsh \
 
 # atuin
 if [[ $(command -v atuin) == "" ]]; then
-  brew install atuin
+    brew install atuin
 fi
 
 if [[ $(command -v cargo) == "" ]]; then
-  echo "Installing Rust"
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    echo "Installing Rust"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 else
-  echo "Updating Rust"
-  rustup update
+    echo "Updating Rust"
+    rustup update
 fi
