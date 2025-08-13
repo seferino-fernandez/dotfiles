@@ -1,0 +1,55 @@
+.shell "/bin/zsh"
+
+# Define process groups for reuse (New in skhd.zig!)
+.define terminal_apps ["ghostty"]
+.define native_apps ["ghostty", "zen", "chrome"]
+.define browser_apps ["zen", "chrome", "safari"]
+
+# --- Core Applications ---
+cmd - return : /bin/bash ~/.config/skhd/scripts/launch.sh TERMINAL
+cmd - b : /bin/bash ~/.config/skhd/scripts/launch.sh BROWSER
+cmd - e : /bin/bash ~/.config/skhd/scripts/launch.sh EMAIL_CLIENT
+
+# --- Launch Productivity Apps ---
+cmd - a : open 'https://gemini.google.com'
+cmd + shift - v : /bin/bash ~/.config/skhd/scripts/launch.sh CLIPBOARD_MANAGER
+
+# --- Application Launcher ---
+cmd - space : open -a Raycast
+
+## Control Menu
+cmd + alt - space : ~/.config/skhd/scripts/menu.sh
+
+## Power Menu
+cmd - escape : ~/.config/skhd/scripts/powermenu.sh
+
+## Close Window
+cmd - w : aerospace close
+
+## Fullscreen
+f11 : aerospace fullscreen
+
+# --- Workspace Control ---
+## Jump to Workspace
+cmd - 1 : aerospace workspace 1
+cmd - 2 : aerospace workspace 2
+cmd - 3 : aerospace workspace 3
+cmd - 4 : aerospace workspace 4
+
+## Move Window to Workspace
+cmd + shift - 1 : aerospace move-node-to-workspace 1
+cmd + shift - 2 : aerospace move-node-to-workspace 2
+cmd + shift - 3 : aerospace move-node-to-workspace 3
+cmd + shift - 4 : aerospace move-node-to-workspace 4
+
+## Focus Window (Vim)
+alt - h : aerospace focus left
+alt - j : aerospace focus down
+alt - k : aerospace focus up
+alt - l : aerospace focus right
+
+## Swap Window (Vim)
+alt + shift - h : aerospace move left
+alt + shift - j : aerospace move down
+alt + shift - k : aerospace move up
+alt + shift - l : aerospace move right

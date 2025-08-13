@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# JankyBorders configuration using Catppuccin Mocha theme.
+
+# Active color is the main accent color used to highlight the focused window.
+# Inactive color is a dark, subtle color that blends with the background.
+# Background color fills the gap between the window and the border.
+
+options=(
+    style=round
+    width=4.0
+    hidpi=off
+    active_color=0xff89b4fa    # Catppuccin Blue
+    inactive_color=0xff181825  # Catppuccin Mantle
+    background_color=0xff1e1e2e # Catppuccin Base
+)
+
+borders "${options[@]}"
