@@ -7,8 +7,6 @@ for dump in $HOME/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-echo >> "/home/$USER/.zshrc"
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "/home/$USER/.zshrc"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
