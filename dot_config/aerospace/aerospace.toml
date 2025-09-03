@@ -249,7 +249,7 @@ check-further-callbacks = true
 run = ['layout floating']
 
 [[on-window-detected]]
-if.app-id = 'com.1password.1password-macos'
+if.app-id = 'com.1password.1password'
 run = 'layout floating'
 
 [[on-window-detected]]
