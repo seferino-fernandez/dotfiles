@@ -37,7 +37,7 @@ function parse_string_to_table(s)
 end
 
 function get_workspaces()
-    local file = io.popen("aerospace list-workspaces --all")
+    local file = io.popen("aerospace list-workspaces --monitor all --empty no")
     local result = file:read("*a")
     file:close()
 

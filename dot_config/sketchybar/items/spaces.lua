@@ -92,7 +92,7 @@ for _, workspace in ipairs(workspaces) do
   end)
 
   space:subscribe("aerospace_workspace_change", function(env)
-    local is_selected = env.FOCUSED_WORKSPACE == workspace
+    local is_selected = env.AEROSPACE_FOCUSED_WORKSPACE == workspace
     space:set({
       icon = { highlight = is_selected },
       label = { highlight = is_selected },
