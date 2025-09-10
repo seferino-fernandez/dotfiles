@@ -232,11 +232,11 @@ cmd-shift-backspace = [
 # Assign specific applications to workspaces on launch
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace T'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.com.zen.browser'
-run = 'move-node-to-workspace W'
+run = 'move-node-to-workspace 1'
 
 # Make certain windows float by default
 [[on-window-detected]]
@@ -250,7 +250,7 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
 check-further-callbacks = true
-run = ['layout floating']
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
