@@ -16,6 +16,7 @@ auto-update-channel = stable
 quit-after-last-window-closed = true
 shell-integration = zsh
 shell-integration-features = true
+confirm-close-surface = false
 
 # Linux specific features
 gtk-single-instance = true
