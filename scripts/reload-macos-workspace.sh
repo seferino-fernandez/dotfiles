@@ -7,7 +7,6 @@
 #   Reloads all tools/daemons related to my macOS setup.
 #     - Aerospace
 #     - Aerospace Swipe
-#     - Sketchybar
 #     - Borders
 #
 # Requirements:
@@ -42,9 +41,6 @@ main() {
 
   # Aerospace
   aerospace reload-config
-
-  # Sketchybar
-  sketchybar --reload
 
   # Aerospace Swipe
   launchctl stop com.acsandmann.swipe

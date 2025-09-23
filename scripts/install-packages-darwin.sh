@@ -29,11 +29,10 @@ brew install zsh \
     tectonic \
     jj \
     1password-cli \
-    zellij \
     lazygit \
     git-delta \
-    difftastic
-font-fira-code-nerd-font \
+    difftastic \
+    font-fira-code-nerd-font \
     font-jetbrains-mono-nerd-font
 
 # atuin

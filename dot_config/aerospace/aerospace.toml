@@ -2,22 +2,13 @@
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
-after-startup-command = [
-    'exec-and-forget sketchybar',
-    'exec-and-forget borders',
-]
+after-startup-command = []
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = [
-    '/bin/bash',
-    '-c',
-    'sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE FOCUSED_DISPLAY=$(aerospace list-monitors --focused | awk "{print $1}")',
-]
+exec-on-workspace-change = []
 
 # Notify Sketchybar about focuse change
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
-on-focus-changed = [
-    'exec-and-forget sketchybar --trigger aerospace_focus_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-]
+on-focus-changed = []
 
 # Start AeroSpace at login
 start-at-login = true
@@ -159,75 +150,36 @@ cmd-n = 'exec-and-forget open -a "Obsidian"'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 cmd-shift-semicolon = [
-    'mode service',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
+  'mode service',
+  'exec-and-forget sketchybar --trigger aerospace_mode_change',
 ]
 cmd-shift-space = [
-    'mode launcher',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
+  'mode launcher',
+  'exec-and-forget sketchybar --trigger aerospace_mode_change',
 ]
 cmd-shift-backspace = [
-    'mode free',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
+  'mode free',
+  'exec-and-forget sketchybar --trigger aerospace_mode_change',
 ]
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-cmd-shift-semicolon = [
-    'reload-config',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-r = [
-    'flatten-workspace-tree',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-f = [
-    'layout floating tiling',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-backspace = [
-    'close-all-windows-but-current',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
+cmd-shift-semicolon = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
 
-cmd-shift-h = [
-    'join-with left',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-cmd-shift-j = [
-    'join-with down',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-cmd-shift-k = [
-    'join-with up',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-cmd-shift-l = [
-    'join-with right',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
+cmd-shift-h = ['join-with left', 'mode main']
+cmd-shift-j = ['join-with down', 'mode main']
+cmd-shift-k = ['join-with up', 'mode main']
+cmd-shift-l = ['join-with right', 'mode main']
 
 [mode.launcher.binding]
-cmd-shift-space = [
-    'reload-config',
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
+cmd-shift-space = ['reload-config', 'mode main']
 
 [mode.free.binding]
-cmd-shift-backspace = [
-    'mode main',
-    'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
+cmd-shift-backspace = ['mode main']
 
 # Assign specific applications to workspaces on launch
 [[on-window-detected]]
