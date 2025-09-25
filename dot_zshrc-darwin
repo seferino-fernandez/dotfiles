@@ -11,13 +11,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # --- Zsh Completion System Initialization ---
-# Load the compinit function and initialize the completion system.
-# This needs to happen before any scripts/plugins that use 'compdef'.
 autoload -Uz compinit
-for dump in $HOME/.zcompdump(N.mh+24); do
-    compinit
-done
-compinit -C
+compinit
 
 # Load custom Zsh configuration files from ~/.zshrc.d
 #
