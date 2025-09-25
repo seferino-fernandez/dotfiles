@@ -149,18 +149,9 @@ cmd-m = 'exec-and-forget open -a "Spotify"'
 cmd-n = 'exec-and-forget open -a "Obsidian"'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-cmd-shift-semicolon = [
-  'mode service',
-  'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-cmd-shift-space = [
-  'mode launcher',
-  'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
-cmd-shift-backspace = [
-  'mode free',
-  'exec-and-forget sketchybar --trigger aerospace_mode_change',
-]
+cmd-shift-semicolon = ['mode service']
+cmd-shift-space = ['mode launcher']
+cmd-shift-backspace = ['mode free']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -169,7 +160,6 @@ cmd-shift-semicolon = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
 f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
-
 cmd-shift-h = ['join-with left', 'mode main']
 cmd-shift-j = ['join-with down', 'mode main']
 cmd-shift-k = ['join-with up', 'mode main']
