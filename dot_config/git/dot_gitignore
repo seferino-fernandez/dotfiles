@@ -2,6 +2,14 @@
 .cursorrules
 .cursorignore
 .cursor/
+
+# Kiro
 .kiro/
+
+# Claude
 CLAUDE.md
 .claude/
+
+# Gemini
+GEMINI.md
+

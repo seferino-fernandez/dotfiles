@@ -29,3 +29,4 @@ window-vsync = true
 window-padding-balance = true 
 window-colorspace = display-p3
 quick-terminal-screen = main
+keybind = shift+enter=text:\x1b\r
