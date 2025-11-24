@@ -15,7 +15,7 @@ auto-update = check
 auto-update-channel = stable
 quit-after-last-window-closed = true
 shell-integration = zsh
-shell-integration-features = true
+shell-integration-features = ssh-terminfo,ssh-env
 confirm-close-surface = false
 
 # Linux specific features
