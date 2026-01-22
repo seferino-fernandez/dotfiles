@@ -30,11 +30,12 @@ brew install zsh \
     fzf \
     sheldon \
     starship \
-    fnm \
     chezmoi \
     uv \
     tectonic \
-    lazygit
+    lazygit \
+    lazydocker \
+    fastfetch
 
 # atuin
 if [[ $(command -v atuin) == "" ]]; then

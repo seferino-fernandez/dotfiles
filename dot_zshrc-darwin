@@ -78,3 +78,8 @@ fi
 if command -v atuin>/dev/null 2>&1; then
     eval "$(atuin init zsh)"
 fi
+
+# mise
+if command -v mise>/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
+fi

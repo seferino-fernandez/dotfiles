@@ -22,4 +22,5 @@ brew install zsh \
     fzf \
     sheldon \
     starship \
-    chezmoi
+    chezmoi \
+    fastfetch

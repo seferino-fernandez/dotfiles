@@ -32,6 +32,7 @@ brew install zsh \
     lazygit \
     git-delta \
     difftastic \
+    fastfetch \
     font-fira-code-nerd-font \
     font-jetbrains-mono-nerd-font
 
