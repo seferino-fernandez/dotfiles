@@ -10,6 +10,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # --- Zsh Completion System Initialization ---
 autoload -Uz compinit
 compinit

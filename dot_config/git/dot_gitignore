@@ -10,6 +10,13 @@
 CLAUDE.md
 .claude/
 
+docs/
+
+.worktrees
+.worktrees/*
+
 # Gemini
 GEMINI.md
+
+notes/
 
