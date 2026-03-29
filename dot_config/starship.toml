@@ -24,13 +24,13 @@ add_newline = true
 palette = "catppuccin_mocha"
 
 [os]
-format = '[$symbol](bold white)'
+format = '[$symbol](text)'
 disabled = false
 
 [os.symbols]
 Macos = " "
 Windows = "󰍲 "
-Ubuntu = "󰣳 "
+Ubuntu = " "
 Debian = " "
 FreeBSD = " "
 Linux = " "
@@ -108,7 +108,7 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 
 [hostname]
 ssh_only = true
-format = '\[[🌐 $hostname](bold flamingo)\]'
+format = '\[[$hostname](bold flamingo)\]'
 disabled = false
 
 [localip]
