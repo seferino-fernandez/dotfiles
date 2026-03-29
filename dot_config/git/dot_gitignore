@@ -1,22 +1,31 @@
 # Cursor
+
 .cursorrules
 .cursorignore
 .cursor/
 
 # Kiro
+
 .kiro/
 
 # Claude
+
 CLAUDE.md
 .claude/
 
-docs/
+docs/plans/
 
 .worktrees
-.worktrees/*
+.worktrees/\*
 
 # Gemini
+
 GEMINI.md
 
 notes/
 
+skills-lock.json
+
+AGENTS.md
+
+.agents/
