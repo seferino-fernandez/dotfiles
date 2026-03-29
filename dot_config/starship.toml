@@ -24,7 +24,7 @@ add_newline = true
 palette = "catppuccin_mocha"
 
 [os]
-format = '[$symbol](text)'
+format = '[$symbol](bold white)'
 disabled = false
 
 [os.symbols]
