@@ -9,6 +9,9 @@ compinit -C
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # Load custom Zsh configuration files from ~/.zshrc.d
 #

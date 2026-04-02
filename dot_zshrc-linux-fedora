@@ -7,6 +7,9 @@ for dump in $HOME/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # Load custom Zsh configuration files from ~/.zshrc.d
 #
